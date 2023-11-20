@@ -11,7 +11,7 @@ const SearchBar: FC<IProps> = ({ usersName }) => {
     <div className="max-w-[33rem] border border-buttonBlue border-1 rounded-l-xl">
       <FontAwesomeIcon icon={faMagnifyingGlass} className="ml-5 mr-2" />
       <input
-        className="w-64 h-10"
+        className="w-64 h-10 outline-none"
         type="text"
         placeholder="Type users GitHub user name"
         value={usersName}
