@@ -27,11 +27,11 @@ const DataFrame: FC<IProps> = ({
           <div>{lastUpdated}</div>
         </div>
       </div>
-
       <div className="flex items-center justify-end ">
         <a
-          className="bg-buttonBlue h-[40px] w-[110px] rounded-lg text-white"
+          className="flex justify-center items-center bg-buttonBlue h-[40px] w-[110px] rounded-lg text-white"
           href={link}
+          target="_blank"
         >
           Link to Repo
         </a>
