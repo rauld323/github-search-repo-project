@@ -3,7 +3,7 @@ import FilterButton from "./components/FilterButton";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const myName = "rauld323";
+  const myName = "";
   const languageOptions = ["CSS,HTML, JS"];
   return (
     <>
