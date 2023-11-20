@@ -8,7 +8,7 @@ interface IProps {
 
 const SearchBar: FC<IProps> = ({ usersName }) => {
   return (
-    <div className=" w-92 border border-buttonBlue border-1 rounded-l-xl">
+    <div className="max-w-[33rem] border border-buttonBlue border-1 rounded-l-xl">
       <FontAwesomeIcon icon={faMagnifyingGlass} className="ml-5 mr-2" />
       <input
         className="w-96 h-12"
