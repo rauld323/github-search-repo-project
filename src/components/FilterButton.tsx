@@ -5,11 +5,17 @@ interface IProps {
   placeholderText: string;
 }
 
-const FilterButton: FC<IProps> = ({ placeholderText }) => {
+const FilterButton: FC<IProps> = ({ placeholderText, filterOptions }) => {
   const [showOptions, setShowOptions] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const handleButtonClick = () => {
     setShowOptions(!showOptions);
+  };
+
+  const handleOptionClick = (language: string) => {
+    setSelectedOption(language);
+    setShowOptions(false);
   };
 
   return (
@@ -19,8 +25,11 @@ const FilterButton: FC<IProps> = ({ placeholderText }) => {
           type="button"
           className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           onClick={handleButtonClick}
+          disabled={filterOptions ? false : true}
         >
-          {placeholderText}
+          {selectedOption
+            ? `${placeholderText}: ${selectedOption}`
+            : `Select ${placeholderText}`}
         </button>
 
         {showOptions && (
@@ -30,7 +39,18 @@ const FilterButton: FC<IProps> = ({ placeholderText }) => {
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="options-menu"
-            ></div>
+            >
+              {filterOptions.map((language) => (
+                <button
+                  key={language}
+                  onClick={() => handleOptionClick(language)}
+                  className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                  role="menuitem"
+                >
+                  {language}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
