@@ -1,18 +1,12 @@
 import DataFrame from "./components/DataFrame";
-import FilterButton from "./components/FilterButton";
-import SearchBar from "./components/SearchBar";
+import Introduction from "./containers/Introduction";
 
 function App() {
   const myName = "";
-  const languageOptions = ["CSS,HTML, JS"];
+  const languagOptions = ["HTML", "CSS", "JavaScript", "TypeScript"];
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Testing Environment</h1>
-      <SearchBar usersName={myName} />
-      <FilterButton
-        filterOptions={languageOptions}
-        placeholderText={"Language"}
-      />
+      <Introduction userName={myName} filterOptions={languagOptions} />
       <DataFrame
         language={"CSS"}
         repoName={"react-portfolio-2023"}
