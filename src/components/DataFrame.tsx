@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { setBackgroundColor, setTextColor } from "../helpers/setLanguageColor";
 
 interface IProps {
   language: string;
@@ -21,7 +22,13 @@ const DataFrame: FC<IProps> = ({
         <h1>{repoName}</h1>
         <div>{descriptions}</div>
         <div className="flex flex-wrap-reverse">
-          <div className="mr-5 w-12 bg-buttonBlue text-white text-center rounded-lg h-auto">
+          <div
+            className="mr-5 min-w-[60px] text-center rounded-lg h-auto px-5"
+            style={{
+              backgroundColor: `${setBackgroundColor(language)}`,
+              color: `${setTextColor(language)}`,
+            }}
+          >
             {language}
           </div>
           <div>{lastUpdated}</div>
