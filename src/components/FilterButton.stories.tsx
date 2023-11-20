@@ -12,7 +12,11 @@ type Story = StoryObj<typeof FilterButton>;
 export const Primary: Story = {
   render: () => (
     <div className="flex justify-center mt-16">
-      <FilterButton filterOptions={[]} placeholderText={""} />
+      <FilterButton
+        filterOptions={[]}
+        placeholderText={""}
+        onFilterChange={() => undefined}
+      />
     </div>
   ),
 };
