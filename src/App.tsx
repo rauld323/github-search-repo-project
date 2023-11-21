@@ -34,6 +34,7 @@ function App() {
       return response.data;
     },
   });
+
   const handleSearch = () => {
     refetch();
   };
@@ -51,7 +52,6 @@ function App() {
         filterOptions={filterOptions}
         setUserName={setUserName}
         handleSearch={handleSearch}
-        repos={userLanguages}
         isLoading={isLoading}
       />
       <div className="flex flex-wrap justify-between">

@@ -9,7 +9,7 @@ export function setBackgroundColor(languageName: string) {
     case "TypeScript":
       return "blue";
     default:
-      return "none";
+      return "orange";
   }
 }
 
@@ -24,6 +24,6 @@ export function setTextColor(languageName: string) {
     case "TypeScript":
       return "white";
     default:
-      return "none";
+      return "black";
   }
 }

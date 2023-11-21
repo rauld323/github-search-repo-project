@@ -8,7 +8,6 @@ interface IProps {
   filterOptions: string[];
   setUserName: any;
   handleSearch: () => void;
-  repos: string[];
   isLoading: boolean;
 }
 const handleFilterChange = (selectedOption: string | null) => {
@@ -24,10 +23,8 @@ const Introduction: FC<IProps> = ({
   filterOptions,
   setUserName,
   handleSearch,
-  repos,
   isLoading,
 }) => {
-  console.log(repos);
   return (
     <div className="flex flex-col item-center items-center">
       <h1 className="text-3xl font-bold underline mb-12">
@@ -39,7 +36,7 @@ const Introduction: FC<IProps> = ({
           setUserName={setUserName}
           handleSearch={handleSearch}
         />
-        {repos && isLoading && (
+        {userName && !isLoading && (
           <div className="flex gap-4 flex-wrap">
             <FilterInput
               filterOptions={[]}
