@@ -4,9 +4,9 @@ export function setBackgroundColor(languageName: string) {
       return "yellow";
     case "HTML":
       return "red";
-    case "JAVASCRIPT":
+    case "JavaScript":
       return "purple";
-    case "TYPESCRIPT":
+    case "TypeScript":
       return "blue";
     default:
       return "none";
@@ -19,9 +19,9 @@ export function setTextColor(languageName: string) {
       return "black";
     case "HTML":
       return "white";
-    case "JAVASCRIPT":
+    case "JavaScript":
       return "white";
-    case "TYPESCRIPT":
+    case "TypeScript":
       return "white";
     default:
       return "none";
