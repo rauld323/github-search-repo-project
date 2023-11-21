@@ -17,18 +17,20 @@ function App() {
   return (
     <>
       <Introduction userName={myName} filterOptions={filterOptions} />
-      {repos?.map((repo: IRepos, index: number) => (
-        <>
-          <DataFrame
-            key={index}
-            language={repo.language}
-            name={repo.name}
-            description={repo.description}
-            svn_url={repo.svn_url}
-            updated_at={`Update ${repo.updated_at} days ago`}
-          />
-        </>
-      ))}
+      <div className="flex flex-wrap justify-between">
+        {repos?.map((repo: IRepos, index: number) => (
+          <>
+            <DataFrame
+              key={index}
+              language={repo.language}
+              name={repo.name}
+              description={repo.description}
+              svn_url={repo.svn_url}
+              updated_at={`Update ${repo.updated_at} days ago`}
+            />
+          </>
+        ))}
+      </div>
     </>
   );
 }
