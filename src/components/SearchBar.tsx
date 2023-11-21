@@ -13,6 +13,14 @@ const SearchBar: FC<ISearchBarProps> = ({
   setUserName,
   handleSearch,
 }) => {
+  const handleInputChange = (e: any) => {
+    setUserName(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    handleSearch;
+  };
+
   return (
     <div className="max-w-[33rem] border border-buttonBlue border-1 rounded-l-xl">
       <FontAwesomeIcon icon={faMagnifyingGlass} className="ml-5 mr-2" />
@@ -21,12 +29,12 @@ const SearchBar: FC<ISearchBarProps> = ({
         type="text"
         placeholder="Type users GitHub user name"
         value={userName}
-        onChange={(e) => setUserName(e.target.value)}
+        onChange={handleInputChange}
       />
       <button
         type="submit"
         className="w-24 h-12 bg-buttonBlue text-white rounded-tr-xl"
-        onClick={handleSearch}
+        onClick={handleSubmit}
       >
         Search
       </button>

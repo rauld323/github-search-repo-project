@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import DataFrame from "./components/DataFrame";
 import Introduction from "./containers/Introduction";
+import IntialScreen from "./containers/screens/IntialScreen";
+import LoadingScreen from "./containers/screens/LoadingScreen";
 import { getUniqueStrings } from "./helpers/filterLanguageOptions";
 
 export interface IRepos {
@@ -32,7 +34,6 @@ function App() {
       return response.data;
     },
   });
-
   const handleSearch = () => {
     refetch();
   };
@@ -50,12 +51,18 @@ function App() {
         filterOptions={filterOptions}
         setUserName={setUserName}
         handleSearch={handleSearch}
+        repos={userLanguages}
+        isLoading={isLoading}
       />
       <div className="flex flex-wrap justify-between">
-        {isLoading
-          ? "555454545454"
-          : repos?.map((repo: IRepos, index: number) => (
-              <>
+        {!userName && !isLoading && <IntialScreen />}
+
+        {isLoading ? (
+          <LoadingScreen />
+        ) : (
+          repos?.map((repo: IRepos, index: number) => (
+            <>
+              {
                 <DataFrame
                   key={index}
                   language={repo.language}
@@ -64,8 +71,10 @@ function App() {
                   svn_url={repo.svn_url}
                   updated_at={`Update ${repo.updated_at} days ago`}
                 />
-              </>
-            ))}
+              }
+            </>
+          ))
+        )}
       </div>
     </>
   );

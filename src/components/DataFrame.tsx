@@ -1,6 +1,6 @@
 import { parseISO, differenceInDays } from "date-fns";
 import { FC, useEffect, useState } from "react";
-import { IRepos } from "../api/RestClient";
+import { IRepos } from "../App";
 import { setBackgroundColor, setTextColor } from "../helpers/setLanguageColor";
 
 const DataFrame: FC<IRepos> = ({
