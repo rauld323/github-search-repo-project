@@ -4,7 +4,7 @@ import axios from "../../node_modules/axios/index";
 export interface IRepos {
   name: string;
   language: string;
-  description: string;
+  description?: string;
   svn_url: string;
   updated_at: string;
 }
