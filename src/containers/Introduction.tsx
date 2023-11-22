@@ -21,11 +21,11 @@ const Introduction: FC<IProps> = ({
   const hasFilterOptions = userName && !isLoading && filterOptions.length > 1;
 
   return (
-    <div className="flex flex-col item-center items-center">
-      <h1 className="text-3xl font-bold underline mb-12">
-        GitHub Repo Searcher
-      </h1>
-      <div className="flex mb-5 flex-wrap items-center gap-4 items-center justify-center flex-col">
+    <div className="flex item-center items-center w-full flex-wrap md:h-24 h-32 border-b border-gray-300 mt-5 md:mt-0">
+      <div className="w-full md:w-1/2 text-3xl font-bold text-center md:text-left md:pl-10 pl-0">
+        GitHub Searcher
+      </div>
+      <div className="w-full md:w-1/2 flex flex-wrap gap-4 flex-col items-center md:items-start mt-5 md:mt-0 md:pr-10 pr-0">
         <SearchBar userName={userName} setUserName={setUserName} />
         {hasFilterOptions && (
           <div className="flex gap-4 flex-wrap">

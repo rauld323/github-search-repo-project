@@ -13,10 +13,10 @@ const SearchBar: FC<ISearchBarProps> = ({ userName, setUserName }) => {
   };
 
   return (
-    <div className="max-w-[33rem] border border-buttonBlue border-1 rounded-xl">
+    <div className="border border-buttonBlue border-1 rounded-xl">
       <FontAwesomeIcon icon={faMagnifyingGlass} className="ml-5 mr-2" />
       <input
-        className="w-64 h-10 outline-none rounded-xl"
+        className="w-72 h-10 outline-none rounded-xl"
         type="text"
         placeholder="Type users GitHub user name"
         value={userName}
