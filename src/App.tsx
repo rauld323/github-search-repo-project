@@ -17,6 +17,7 @@ export interface IRepos {
 
 function App() {
   const [userName, setUserName] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
 
   const {
     data: repos,
@@ -45,6 +46,14 @@ function App() {
     ? getUniqueStrings(userLanguages)
     : [];
 
+  const handleFilterChange = (selectedOption: string | null) => {
+    setSelectedFilter(selectedOption);
+  };
+
+  const filteredRepos = selectedFilter
+    ? repos?.filter((repo: IRepos) => repo.language === selectedFilter)
+    : repos;
+
   return (
     <>
       <Introduction
@@ -53,14 +62,16 @@ function App() {
         setUserName={setUserName}
         handleSearch={handleSearch}
         isLoading={isLoading}
+        onFilterChange={handleFilterChange}
       />
+
       <div className="flex flex-wrap justify-between">
         {!userName && !isLoading && <IntialScreen />}
 
         {isLoading ? (
           <LoadingScreen />
         ) : (
-          repos?.map((repo: IRepos, index: number) => (
+          filteredRepos?.map((repo: IRepos, index: number) => (
             <>
               {
                 <DataFrame

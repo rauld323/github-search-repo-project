@@ -7,12 +7,10 @@ interface IProps {
   userName: string;
   filterOptions: string[];
   setUserName: any;
-  handleSearch: () => void;
   isLoading: boolean;
+  handleSearch: () => void;
+  onFilterChange: (selectedOption: string | null) => void;
 }
-const handleFilterChange = (selectedOption: string | null) => {
-  console.log("Selected Language:", selectedOption);
-};
 
 const handleSearchInputChange = (repo: string | null) => {
   console.log("Search repo:", repo);
@@ -22,8 +20,9 @@ const Introduction: FC<IProps> = ({
   userName,
   filterOptions,
   setUserName,
-  handleSearch,
   isLoading,
+  onFilterChange,
+  handleSearch,
 }) => {
   return (
     <div className="flex flex-col item-center items-center">
@@ -40,12 +39,12 @@ const Introduction: FC<IProps> = ({
           <div className="flex gap-4 flex-wrap">
             <FilterInput
               filterOptions={[]}
-              onFilterChange={handleFilterChange}
+              onFilterChange={handleSearchInputChange}
             />
             <FilterButton
               filterOptions={filterOptions}
               placeholderText={"Language"}
-              onFilterChange={handleSearchInputChange}
+              onFilterChange={onFilterChange}
             />
           </div>
         )}
