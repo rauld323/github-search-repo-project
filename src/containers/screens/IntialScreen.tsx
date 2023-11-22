@@ -3,7 +3,7 @@ import githubIMage from "../../assets/github.png";
 
 const IntialScreen: FC = () => {
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl">
+    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl bg-slate-100">
       <div className="md:flex">
         <div className="md:shrink-0 flex-shrink-0 flex justify-center items-center px-2">
           <img
