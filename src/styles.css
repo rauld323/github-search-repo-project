@@ -9,3 +9,24 @@
   align-items: center;
   flex-direction: column;
 }
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(
+    to top,
+    #ffffff,
+    #f9f9fc,
+    #f2f3f8,
+    #ebedf5,
+    #e3e7f2,
+    #dce3f1,
+    #d5dfef,
+    #cddbee,
+    #c4d8ee,
+    #bad4ee,
+    #afd1ed,
+    #a3ceec
+  );
+}

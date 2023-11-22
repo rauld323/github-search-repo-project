@@ -22,7 +22,7 @@ const DataFrame: FC<IRepos> = ({
 
   return (
     <div
-      className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md flex flex-col mb-10 bg-slate-200"
+      className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md flex flex-col mb-10 bg-slate-200 m-16"
       style={{ width: "380px" }}
     >
       <div className="w-100 h-20 flex justify-end items-center">

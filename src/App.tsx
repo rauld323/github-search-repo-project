@@ -3,7 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import DataFrame from "./components/DataFrame";
 import ScrollButton from "./components/ScrollButton";
-import Introduction from "./containers/Introduction";
+import FilterSection from "./containers/FilterSection";
+import Header from "./containers/Header";
 import EmptyRepoScreen from "./containers/screens/EmptyRepoScreen";
 import IntialScreen from "./containers/screens/IntialScreen";
 import LoadingScreen from "./containers/screens/LoadingScreen";
@@ -58,9 +59,11 @@ function App() {
 
   const userHasNoRepos = userName && repos?.length === 0;
 
+  const hasFilterOptions = userName && !isLoading && filterOptions.length > 1;
+
   return (
     <>
-      <Introduction
+      <Header
         userName={userName}
         filterOptions={filterOptions}
         setUserName={setUserName}
@@ -68,9 +71,15 @@ function App() {
         isLoading={isLoading}
         onFilterChange={handleFilterChange}
       />
+      {hasFilterOptions && (
+        <FilterSection
+          filterOptions={filterOptions}
+          isLoading={isLoading}
+          onFilterChange={handleFilterChange}
+        />
+      )}
+      {!userName && !isLoading && <IntialScreen />}
       <div className="flex flex-wrap justify-between">
-        {!userName && !isLoading && <IntialScreen />}
-
         {isLoading ? (
           <LoadingScreen />
         ) : userHasNoRepos ? (
