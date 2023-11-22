@@ -64,10 +64,8 @@ function App() {
         isLoading={isLoading}
         onFilterChange={handleFilterChange}
       />
-
       <div className="flex flex-wrap justify-between">
         {!userName && !isLoading && <IntialScreen />}
-
         {isLoading ? (
           <LoadingScreen />
         ) : (

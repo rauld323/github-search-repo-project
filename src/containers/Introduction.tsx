@@ -1,6 +1,6 @@
 import { FC } from "react";
 import FilterButton from "../components/FilterButton";
-import FilterInput from "../components/FilterInput";
+// import FilterInput from "../components/FilterInput";
 import SearchBar from "../components/SearchBar";
 
 interface IProps {
@@ -12,9 +12,9 @@ interface IProps {
   onFilterChange: (selectedOption: string | null) => void;
 }
 
-const handleSearchInputChange = (repo: string | null) => {
-  console.log("Search repo:", repo);
-};
+// const handleSearchInputChange = (repo: string | null) => {
+//   console.log("Search repo:", repo);
+// };
 
 const Introduction: FC<IProps> = ({
   userName,
@@ -37,10 +37,10 @@ const Introduction: FC<IProps> = ({
         />
         {userName && !isLoading && (
           <div className="flex gap-4 flex-wrap">
-            <FilterInput
+            {/* <FilterInput
               filterOptions={[]}
               onFilterChange={handleSearchInputChange}
-            />
+            /> */}
             <FilterButton
               filterOptions={filterOptions}
               placeholderText={"Language"}
