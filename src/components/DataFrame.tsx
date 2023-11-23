@@ -7,7 +7,7 @@ const DataFrame: FC<IRepos> = ({
   language,
   name,
   description,
-  repoLink,
+  svn_url,
   updated_at,
 }) => {
   const [daysDifference, setDaysDifference] = useState<number | null>(null);
@@ -19,26 +19,21 @@ const DataFrame: FC<IRepos> = ({
     const difference = differenceInDays(currentDate, specificDate);
     setDaysDifference(difference);
   }, []);
-
   return (
     <div
-      className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md flex flex-col mb-10 bg-slate-200 m-16"
+      className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md flex flex-col mb-10 "
       style={{ width: "380px" }}
     >
-      <div className="w-100 h-20 flex justify-end items-center">
-        <div className="h-full">
-          <div
-            className="flex justify-center items-center p-2 text-center"
-            style={{
-              maxWidth: "90px",
-              height: "10%",
-              borderRadius: "10px",
-              backgroundColor: `${setBackgroundColor(language)}`,
-              color: `${setTextColor(language)}`,
-            }}
-          >
-            {language}
-          </div>
+      <div className="w-100 flex items-center p-4">
+        <div
+          className="flex justify-center items-center p-2 text-center h-6 min rounded-lg"
+          style={{
+            minWidth: "90px",
+            backgroundColor: `${setBackgroundColor(language)}`,
+            color: `${setTextColor(language)}`,
+          }}
+        >
+          {language}
         </div>
       </div>
 
@@ -58,10 +53,10 @@ const DataFrame: FC<IRepos> = ({
         <p className="text-xs sm:text-sm text-gray-500">{`Updated ${daysDifference} days ago.`}</p>
       </div>
 
-      <div className="px-4 py-2 mt-auto">
+      <div className="px-4 py-2 mt-auto flex justify-center">
         <a
-          className="block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl text-center"
-          href={repoLink}
+          className="block w-40  bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl text-center"
+          href={svn_url}
           target="_blank"
         >
           Link to Repo

@@ -14,8 +14,9 @@ export interface IRepos {
   name: string;
   language: string;
   description?: string;
-  repoLink: string;
+  svn_url: string;
   updated_at: string;
+  owner: any;
 }
 
 function App() {
@@ -78,8 +79,10 @@ function App() {
           onFilterChange={handleFilterChange}
         />
       )}
+
       {!userName && !isLoading && <IntialScreen />}
-      <div className="flex flex-wrap justify-between">
+
+      <div className="flex flex-wrap justify-between p-10">
         {isLoading ? (
           <LoadingScreen />
         ) : userHasNoRepos ? (
@@ -92,8 +95,9 @@ function App() {
                 language={repo.language}
                 name={repo.name}
                 description={repo.description}
-                repoLink={repo.repoLink}
+                svn_url={repo.svn_url}
                 updated_at={repo.updated_at}
+                owner={repo.owner}
               />
               {filteredRepos.length >= 7 && <ScrollButton />}
             </>
