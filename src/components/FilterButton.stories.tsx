@@ -9,14 +9,21 @@ const meta: Meta<typeof FilterButton> = {
 export default meta;
 type Story = StoryObj<typeof FilterButton>;
 
-export const Primary: Story = {
-  render: () => (
-    <div className="flex justify-center mt-16">
-      <FilterButton
-        filterOptions={[]}
-        placeholderText={""}
-        onFilterChange={() => undefined}
-      />
-    </div>
-  ),
+export const Primary: Story = (args: any) => (
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      marginTop: "100px",
+      height: "100vh",
+    }}
+  >
+    <FilterButton {...args} />
+  </div>
+);
+
+Primary.args = {
+  filterOptions: ["dogs", "cats", "birds"],
+  placeholderText: "Pets",
+  onFilterChange: () => alert("You clicked an option"),
 };
