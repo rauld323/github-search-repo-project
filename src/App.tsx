@@ -10,6 +10,7 @@ import ErrorScreen from "./containers/screens/ErrorScreen";
 import IntialScreen from "./containers/screens/IntialScreen";
 import LoadingScreen from "./containers/screens/LoadingScreen";
 import { getUniqueStrings } from "./helpers/filterLanguageOptions";
+import { replaceNullWithNA } from "./helpers/validateLanguageString";
 
 export interface IRepos {
   name: string;
@@ -49,7 +50,7 @@ function App() {
   const userLanguages = repos?.map((repo: IRepos) => repo.language);
 
   const filterOptions: string[] = userLanguages
-    ? getUniqueStrings(userLanguages)
+    ? getUniqueStrings(replaceNullWithNA(userLanguages))
     : [];
 
   const handleFilterChange = (selectedOption: string | null) => {
@@ -57,7 +58,9 @@ function App() {
   };
 
   const filteredRepos = selectedFilter
-    ? repos?.filter((repo: IRepos) => repo.language === selectedFilter)
+    ? repos?.filter((repo: IRepos) =>
+        replaceNullWithNA([repo.language]).includes(selectedFilter),
+      )
     : repos;
 
   const userHasNoRepos = userName && repos?.length === 0;

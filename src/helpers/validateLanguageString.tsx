@@ -5,3 +5,7 @@ export const validateLanguageString = (inputString: string) => {
     return "N/A";
   }
 };
+
+export const replaceNullWithNA = (arr: string[]) => {
+  return arr.map((item) => (item === null ? "N/A" : item));
+};
