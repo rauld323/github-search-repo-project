@@ -2,6 +2,7 @@ import { parseISO, differenceInDays } from "date-fns";
 import { FC, useEffect, useState } from "react";
 import { IRepos } from "../App";
 import { setBackgroundColor, setTextColor } from "../helpers/setLanguageColor";
+import { validateLanguageString } from "../helpers/validateLanguageString";
 
 const DataFrame: FC<IRepos> = ({
   language,
@@ -33,7 +34,7 @@ const DataFrame: FC<IRepos> = ({
             color: `${setTextColor(language)}`,
           }}
         >
-          {language}
+          {validateLanguageString(language)}
         </div>
       </div>
 

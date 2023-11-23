@@ -16,7 +16,6 @@ export interface IRepos {
   description?: string;
   svn_url: string;
   updated_at: string;
-  owner: any;
 }
 
 function App() {
@@ -97,9 +96,8 @@ function App() {
                 description={repo.description}
                 svn_url={repo.svn_url}
                 updated_at={repo.updated_at}
-                owner={repo.owner}
               />
-              {filteredRepos.length >= 7 && <ScrollButton />}
+              {filteredRepos.length >= 10 && <ScrollButton />}
             </>
           ))
         )}
