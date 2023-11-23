@@ -17,8 +17,8 @@ const EmptyRepoScreen: FC<IProps> = (didNotMatchRepos) => {
       </div>
       <div className="text-lg font-medium text-black">
         {didNotMatchRepos
-          ? "Couldnt find any Repositories that matche your filters."
-          : "User doesnt have any Repositories."}
+          ? "Couldn't find any Repositories that match your search."
+          : "User doesn't have any Repositories."}
       </div>
     </div>
   );

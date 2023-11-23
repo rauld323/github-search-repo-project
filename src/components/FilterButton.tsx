@@ -13,6 +13,7 @@ const FilterButton: FC<IProps> = ({
 }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleButtonClick = () => {
@@ -48,19 +49,26 @@ const FilterButton: FC<IProps> = ({
     };
   }, []);
 
+  useEffect(() => {
+    if (selectedOption) {
+      onFilterChange(selectedOption);
+    } else {
+      onFilterChange(null);
+    }
+  }, [selectedOption, onFilterChange]);
+
   return (
-    <div className="relative inline-block text-left">
-      <div>
-        <button
-          type="button"
-          className="inline-flex justify-center w-full rounded-lg border border-buttonBlue  shadow-sm bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
-          onClick={handleButtonClick}
-        >
-          {selectedOption
-            ? `${placeholderText}: ${selectedOption}`
-            : `Select ${placeholderText}`}
-        </button>
-      </div>
+    <div className="relative inline-block text-left  max-w-40">
+      <button
+        type="button"
+        className="inline-flex justify-center rounded-lg border border-buttonBlue shadow-sm bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+        onClick={handleButtonClick}
+      >
+        {selectedOption
+          ? `${placeholderText}: ${selectedOption}`
+          : `Select ${placeholderText}`}
+      </button>
+
       {showOptions && (
         <div
           ref={dropdownRef}

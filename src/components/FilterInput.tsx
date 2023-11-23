@@ -24,16 +24,14 @@ const FilterInput: React.FC<FilterInputProps> = ({
   }, [searchRepoName, onFilterChange]);
 
   return (
-    <div className="relative inline-block text-left border border-buttonBlue rounded-lg">
-      <div>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchRepoName}
-          onChange={handleInputChange}
-          className="inline-flex justify-center w-full rounded-md shadow-sm bg-white px-4 py-2 text-sm text-black-200 focus:outline-none"
-        />
-      </div>
+    <div className="relative inline-block text-left border border-buttonBlue rounded-lg max-w-40">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchRepoName}
+        onChange={handleInputChange}
+        className="inline-flex justify-center w-full rounded-md shadow-sm bg-white px-4 py-2 text-sm text-black-200 focus:outline-none"
+      />
       {searchRepoName !== "" && (
         <div className="absolute z-10 mt-1 bg-white border border-gray-300 rounded-md shadow-lg">
           <ul>
