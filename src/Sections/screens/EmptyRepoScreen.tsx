@@ -1,6 +1,11 @@
+import { FC } from "react";
 import githubCharacter from "../../assets/githubCharacter.png";
 
-const EmptyRepoScreen = () => {
+interface IProps {
+  didNotMatchRepos?: boolean;
+}
+
+const EmptyRepoScreen: FC<IProps> = (didNotMatchRepos) => {
   return (
     <div className="flex flex-col justify-center items-center max-w-md mx-auto gap-10 my-12 md:my-28">
       <div className="md:shrink-0 flex-shrink-0 flex justify-center items-center px-2">
@@ -10,7 +15,11 @@ const EmptyRepoScreen = () => {
           alt="GitHub Icon"
         />
       </div>
-      <div className="text-lg font-medium text-black">User has no Repos :(</div>
+      <div className="text-lg font-medium text-black">
+        {didNotMatchRepos
+          ? "Couldnt find any Repositories that matche your filters."
+          : "User doesnt have any Repositories."}
+      </div>
     </div>
   );
 };

@@ -79,6 +79,8 @@ function App() {
   const userHasFilterLanguages =
     userName && !isLoading && filterLanguages.length > 1;
 
+  const didNotFindAnyRepos = filteredRepos?.length === 0;
+
   return (
     <>
       <Header
@@ -117,6 +119,9 @@ function App() {
               {filteredRepos.length >= 10 && <ScrollButton />}
             </>
           ))
+        )}
+        {didNotFindAnyRepos && !userHasNoRepos && (
+          <EmptyRepoScreen didNotMatchRepos />
         )}
         {error && <ErrorScreen />}
       </div>
