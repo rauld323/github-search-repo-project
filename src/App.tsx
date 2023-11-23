@@ -37,9 +37,10 @@ function App() {
       );
       return response.data;
     },
+    enabled: false,
   });
 
-  const handleSearch = () => {
+  const fetchRepos = () => {
     refetch();
   };
 
@@ -65,11 +66,8 @@ function App() {
     <>
       <Header
         userName={userName}
-        filterOptions={filterOptions}
         setUserName={setUserName}
-        handleSearch={handleSearch}
-        isLoading={isLoading}
-        onFilterChange={handleFilterChange}
+        fetchRepos={fetchRepos}
       />
       {hasFilterOptions && (
         <FilterSection
