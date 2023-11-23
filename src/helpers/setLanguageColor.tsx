@@ -32,9 +32,7 @@ export function setTextColor(languageName: string) {
     case "TypeScript":
       return "white";
     case "Ruby":
-      return "black";
-    case "Ruby":
-      return "#7F3F35";
+      return "white";
     case "Shell":
       return "FBB0DE";
     case "Go":
