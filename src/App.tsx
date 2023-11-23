@@ -3,12 +3,12 @@ import axios from "axios";
 import { useState } from "react";
 import DataFrame from "./components/DataFrame";
 import ScrollButton from "./components/ScrollButton";
-import FilterSection from "./containers/FilterSection";
-import Header from "./containers/Header";
-import EmptyRepoScreen from "./containers/screens/EmptyRepoScreen";
-import ErrorScreen from "./containers/screens/ErrorScreen";
-import IntialScreen from "./containers/screens/IntialScreen";
-import LoadingScreen from "./containers/screens/LoadingScreen";
+import FilterSection from "./Sections/FilterSection";
+import Header from "./Sections/Header";
+import EmptyRepoScreen from "./Sections/screens/EmptyRepoScreen";
+import ErrorScreen from "./Sections/screens/ErrorScreen";
+import IntialScreen from "./Sections/screens/IntialScreen";
+import LoadingScreen from "./Sections/screens/LoadingScreen";
 import { getUniqueStrings } from "./helpers/filterLanguageOptions";
 import { replaceNullWithNA } from "./helpers/validateLanguageString";
 
@@ -85,7 +85,7 @@ function App() {
 
       {!repos && !isLoading && !error && <IntialScreen />}
 
-      <div className="flex flex-wrap justify-between p-10">
+      <div className="flex flex-wrap justify-between p-10 gap-5">
         {isLoading ? (
           <LoadingScreen />
         ) : userHasNoRepos ? (
@@ -105,7 +105,6 @@ function App() {
             </>
           ))
         )}
-
         {error && <ErrorScreen />}
       </div>
     </>
