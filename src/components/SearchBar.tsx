@@ -13,7 +13,7 @@ const SearchBar: FC<ISearchBarProps> = ({ userName, setUserName }) => {
   };
 
   return (
-    <div className="border border-buttonBlue border-1 rounded-xl">
+    <div className="border border-buttonBlue border-1 rounded-xl bg-white">
       <FontAwesomeIcon icon={faMagnifyingGlass} className="ml-5 mr-2" />
       <input
         className="w-72 h-10 outline-none rounded-xl"

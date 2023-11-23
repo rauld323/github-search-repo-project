@@ -8,6 +8,9 @@ const meta: Meta<typeof SearchBar> = {
 export default meta;
 type Story = StoryObj<typeof SearchBar>;
 
-export const Primary: Story = {
-  render: () => <SearchBar />,
+export const Primary: Story = (args: any) => <SearchBar {...args} />;
+
+Primary.args = {
+  userName: "rauld323",
+  setUserName: () => console.log("userName"),
 };
