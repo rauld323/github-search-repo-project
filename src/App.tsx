@@ -6,6 +6,7 @@ import ScrollButton from "./components/ScrollButton";
 import FilterSection from "./containers/FilterSection";
 import Header from "./containers/Header";
 import EmptyRepoScreen from "./containers/screens/EmptyRepoScreen";
+import ErrorScreen from "./containers/screens/ErrorScreen";
 import IntialScreen from "./containers/screens/IntialScreen";
 import LoadingScreen from "./containers/screens/LoadingScreen";
 import { getUniqueStrings } from "./helpers/filterLanguageOptions";
@@ -26,6 +27,7 @@ function App() {
     data: repos,
     isLoading,
     refetch,
+    error,
   } = useQuery({
     queryKey: ["userRepos", userName],
     queryFn: async () => {
@@ -69,6 +71,7 @@ function App() {
         setUserName={setUserName}
         fetchRepos={fetchRepos}
       />
+
       {hasFilterOptions && (
         <FilterSection
           filterOptions={filterOptions}
@@ -77,7 +80,7 @@ function App() {
         />
       )}
 
-      {!userName && !isLoading && <IntialScreen />}
+      {!repos && !isLoading && !error && <IntialScreen />}
 
       <div className="flex flex-wrap justify-between p-10">
         {isLoading ? (
@@ -99,6 +102,8 @@ function App() {
             </>
           ))
         )}
+
+        {error && <ErrorScreen />}
       </div>
     </>
   );
