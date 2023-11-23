@@ -22,7 +22,8 @@ export interface IRepos {
 
 function App() {
   const [userName, setUserName] = useState("");
-  const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
+  const [searchRepoName, setSearchRepoName] = useState<string>("");
 
   const {
     data: repos,
@@ -49,23 +50,34 @@ function App() {
 
   const userLanguages = repos?.map((repo: IRepos) => repo.language);
 
-  const filterOptions: string[] = userLanguages
+  const filterLanguages: string[] = userLanguages
     ? getUniqueStrings(replaceNullWithNA(userLanguages))
     : [];
 
   const handleFilterChange = (selectedOption: string | null) => {
-    setSelectedFilter(selectedOption);
+    setSelectedLanguage(selectedOption);
   };
 
-  const filteredRepos = selectedFilter
-    ? repos?.filter((repo: IRepos) =>
-        replaceNullWithNA([repo.language]).includes(selectedFilter),
-      )
-    : repos;
+  const handleSearchRepoNameChange = (searchRepoName: string) => {
+    setSearchRepoName(searchRepoName);
+  };
+
+  const filteredRepos = repos?.filter((repo: IRepos) => {
+    const languageMatches =
+      !selectedLanguage ||
+      replaceNullWithNA([repo.language]).includes(selectedLanguage);
+
+    const repoNameMatches =
+      searchRepoName === "" ||
+      repo.name.toLowerCase().includes(searchRepoName.toLowerCase());
+
+    return languageMatches && repoNameMatches;
+  });
 
   const userHasNoRepos = userName && repos?.length === 0;
 
-  const hasFilterOptions = userName && !isLoading && filterOptions.length > 1;
+  const userHasFilterLanguages =
+    userName && !isLoading && filterLanguages.length > 1;
 
   return (
     <>
@@ -75,11 +87,12 @@ function App() {
         fetchRepos={fetchRepos}
       />
 
-      {hasFilterOptions && (
+      {userHasFilterLanguages && (
         <FilterSection
-          filterOptions={filterOptions}
+          filterOptions={filterLanguages}
           isLoading={isLoading}
           onFilterChange={handleFilterChange}
+          handleSearchInputFilterChange={handleSearchRepoNameChange}
         />
       )}
 
