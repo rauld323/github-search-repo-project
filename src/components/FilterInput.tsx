@@ -30,7 +30,7 @@ const FilterInput: React.FC<FilterInputProps> = ({
         placeholder="Search..."
         value={searchRepoName}
         onChange={handleInputChange}
-        className="inline-flex justify-center w-full rounded-md shadow-sm bg-white px-4 py-2 text-sm text-black-200 focus:outline-none"
+        className="inline-flex justify-center w-full rounded-md shadow-sm bg-white px-4 py-2 text-base text-black-200 focus:outline-none"
       />
       {searchRepoName !== "" && (
         <div className="absolute z-10 mt-1 bg-white border border-gray-300 rounded-md shadow-lg">

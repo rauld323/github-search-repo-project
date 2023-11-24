@@ -23,7 +23,7 @@ const SearchBar: FC<ISearchBarProps> = ({
       <input
         className="w-60 h-10 outline-none rounded-xl"
         type="text"
-        placeholder="Type users GitHub user name"
+        placeholder="Type GitHub user name"
         value={userName}
         onChange={handleInputChange}
       />

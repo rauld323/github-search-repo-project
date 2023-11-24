@@ -61,7 +61,7 @@ const FilterButton: FC<IProps> = ({
     <div className="relative inline-block text-left  max-w-40">
       <button
         type="button"
-        className="inline-flex justify-center rounded-lg border border-buttonBlue shadow-sm bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+        className="inline-flex justify-center rounded-lg border border-buttonBlue shadow-sm bg-white px-4 py-2 text-base font-medium text-buttonBlue hover:bg-gray-50 focus:outline-none"
         onClick={handleButtonClick}
       >
         {selectedOption
@@ -84,7 +84,7 @@ const FilterButton: FC<IProps> = ({
               <button
                 key={language}
                 onClick={() => handleOptionClick(language)}
-                className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                className="block w-full px-4 py-2 text-left text-sm text-buttonBlue hover:bg-gray-100 hover:text-gray-900"
                 role="menuitem"
               >
                 {language}
@@ -93,7 +93,7 @@ const FilterButton: FC<IProps> = ({
           </div>
           <button
             onClick={handleClearAll}
-            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+            className="block w-full text-left px-4 py-2 text-sm text-buttonBlue hover:bg-gray-100 hover:text-gray-900"
           >
             Clear All
           </button>
