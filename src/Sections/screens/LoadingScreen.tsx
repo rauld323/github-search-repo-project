@@ -10,7 +10,9 @@ const LoadingScreen = () => {
           alt="GitHub Icon"
         />
       </div>
-      <div className="text-lg font-medium text-black">Loading...</div>
+      <div className="text-center text-lg font-medium text-black">
+        Loading...
+      </div>
     </div>
   );
 };

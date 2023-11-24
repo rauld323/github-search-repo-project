@@ -15,7 +15,7 @@ const EmptyRepoScreen: FC<IProps> = ({ didNotMatchRepos }) => {
           alt="GitHub Icon"
         />
       </div>
-      <div className="text-lg font-medium text-black">
+      <div className="text-center text-lg font-medium text-black">
         {didNotMatchRepos
           ? "User doesn't have any Repositories that match your criteria."
           : "User has an account but no repositories."}
