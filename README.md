@@ -7,7 +7,7 @@ To achieve responsiveness, I leveraged `Tailwind`, utilizing its tools to mainta
 
 For state management, I opted for `React-Query`. This decision enabled me to effectively handle different states such as loading and error, enhancing the overall user experience by providing clear feedback on ongoing processes. Moreover, beyond managing states, `React-Query`'s caching capability significantly improved the project's performance. Users can observe this enhancement when searching for different users, then returning to a previously searched username without the need to re-submit, as the data remains cached.
 
-Additionally, apart from these primary focuses, I developed a comprehensive `Storybook` for the project's components, facilitating better understanding and testing of these elements. Furthermore, the project has been successfully deployed.
+Additionally, I incorporated `vitest/jest` into the testing suite. Apart from these primary focuses, I developed a `Storybook` for the project's components, facilitating better understanding and testing of these elements. Furthermore, the project has been successfully deployed.
 
 ### [Live Code](https://65607effcc5ae704c77d8e6a--lucent-bunny-705ea9.netlify.app/)
 
@@ -18,6 +18,8 @@ Additionally, apart from these primary focuses, I developed a comprehensive `Sto
 To run the project, type `npm run dev`
 
 To run storybook, type `npm run storybook`
+
+To run vitest/jest, type `npm run test`
 
 <br>
 
