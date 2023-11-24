@@ -15,7 +15,7 @@ const FilterSection: FC<IProps> = ({
   handleSearchInputFilterChange,
 }) => {
   return (
-    <div className="flex justify-center items-center w-full md:justify-start md:items-stretch flex-wrap border-t border-gray-400 min-h-16 bg-white p-5">
+    <div className="flex justify-center items-center w-full md:items-stretch flex-wrap border-t border-gray-400 min-h-16 bg-white p-5">
       <div className="flex gap-4 flex-wrap justify-center ">
         <FilterInput
           filterOptions={filterOptions}
