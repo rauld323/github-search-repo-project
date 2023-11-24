@@ -9,6 +9,8 @@ For state management, I opted for `React-Query`. This decision enabled me to eff
 
 Additionally, apart from these primary focuses, I developed a comprehensive `Storybook` for the project's components, facilitating better understanding and testing of these elements. Furthermore, the project has been successfully deployed.
 
+### [Live Code](https://656054c0cab3de15e9a9277b--lucent-bunny-705ea9.netlify.app/)
+
 <br>
 
 ---
