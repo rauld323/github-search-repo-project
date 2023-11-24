@@ -74,12 +74,12 @@ function App() {
     return languageMatches && repoNameMatches;
   });
 
-  const userHasNoRepos = userName && repos?.length === 0;
-
   const userHasFilterLanguages =
     userName && !isLoading && filterLanguages.length > 1;
 
   const didNotFindAnyRepos = filteredRepos?.length === 0;
+
+  const userHasNoRepos = userName && repos?.length === 0;
 
   return (
     <>
@@ -121,7 +121,7 @@ function App() {
           ))
         )}
         {didNotFindAnyRepos && !userHasNoRepos && (
-          <EmptyRepoScreen didNotMatchRepos />
+          <EmptyRepoScreen didNotMatchRepos={didNotFindAnyRepos} />
         )}
         {error && <ErrorScreen />}
       </div>
