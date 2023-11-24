@@ -2,10 +2,10 @@ import githubCharacter from "../../assets/githubCharacter.png";
 
 const LoadingScreen = () => {
   return (
-    <div className="flex flex-col justify-center items-center max-w-md mx-auto gap-10 my-12 md:my-28">
-      <div className="animate-spin md:shrink-0 flex-shrink-0 flex justify-center items-center px-2">
+    <div className="mx-auto my-12 flex max-w-md flex-col items-center justify-center gap-10 md:my-28">
+      <div className="flex flex-shrink-0 animate-spin items-center justify-center px-2 md:shrink-0">
         <img
-          className="max-h-48 max-w-48 h-auto w-auto object-cover"
+          className="max-w-48 h-auto max-h-48 w-auto object-cover"
           src={githubCharacter}
           alt="GitHub Icon"
         />

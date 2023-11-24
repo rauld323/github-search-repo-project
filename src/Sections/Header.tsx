@@ -9,11 +9,11 @@ interface IProps {
 
 const Header: FC<IProps> = ({ userName, setUserName, fetchRepos }) => {
   return (
-    <div className="flex item-center items-center w-full flex-wrap md:h-24 h-36 border-b border-gray-100 bg-white">
-      <div className="w-full md:w-1/2 text-3xl font-bold text-center md:text-left md:pl-10 pl-0 md:mt-0 mt-6">
+    <div className="item-center flex h-36 w-full flex-wrap items-center border-b border-gray-100 bg-white md:h-24">
+      <div className="mt-6 w-full pl-0 text-center text-3xl font-bold md:mt-0 md:w-1/2 md:pl-10 md:text-left">
         GitHub Searcher
       </div>
-      <div className="w-full md:w-1/2 flex flex-wrap gap-4 flex-col items-center md:items-start mt-1 md:mt-0 mb-6 md:mb-0 md:pr-10 pr-0">
+      <div className="mb-6 mt-1 flex w-full flex-col flex-wrap items-center gap-4 pr-0 md:mb-0 md:mt-0 md:w-1/2 md:items-start md:pr-10">
         <SearchBar
           userName={userName}
           setUserName={setUserName}

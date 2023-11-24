@@ -100,7 +100,7 @@ function App() {
 
       {!repos && !isLoading && !error && <IntialScreen />}
 
-      <div className="flex flex-wrap justify-between p-10 gap-5">
+      <div className="flex flex-wrap justify-between gap-5 p-10">
         {isLoading ? (
           <LoadingScreen />
         ) : userHasNoRepos ? (

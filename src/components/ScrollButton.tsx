@@ -20,7 +20,7 @@ const ScrollButton = () => {
 
   return (
     <button
-      className="z-10 fixed bottom-24 right-12 h-12 w-12 text-2xl bg-blue-500 rounded-xl text-white border cursor-pointer hover:bg-blue-700 active:bg-white active:text-blue-500 active:border-blue-500  "
+      className="fixed bottom-24 right-12 z-10 h-12 w-12 cursor-pointer rounded-xl border bg-blue-500 text-2xl text-white hover:bg-blue-700 active:border-blue-500 active:bg-white active:text-blue-500  "
       onClick={() => goToTop()}
     >
       ↑

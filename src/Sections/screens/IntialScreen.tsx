@@ -3,20 +3,20 @@ import githubIMage from "../../assets/github.png";
 
 const IntialScreen: FC = () => {
   return (
-    <div className="max-w-md md:mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl bg-slate-400 mx-8 my-8 md:my-28">
+    <div className="mx-8 my-8 max-w-md overflow-hidden rounded-xl bg-slate-400 bg-white shadow-md md:mx-auto md:my-28 md:max-w-4xl">
       <div className="md:flex">
-        <div className="md:shrink-0 flex-shrink-0 flex justify-center items-center px-2 mt-5">
+        <div className="mt-5 flex flex-shrink-0 items-center justify-center px-2 md:shrink-0">
           <img
-            className="max-h-48 max-w-48 h-auto w-auto object-cover"
+            className="max-w-48 h-auto max-h-48 w-auto object-cover"
             src={githubIMage}
             alt="GitHub Icon"
           />
         </div>
         <div className="p-8">
-          <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+          <div className="text-sm font-semibold uppercase tracking-wide text-indigo-500">
             Search Through your Repos!
           </div>
-          <div className="block mt-1 text-lg leading-tight font-medium text-black">
+          <div className="mt-1 block text-lg font-medium leading-tight text-black">
             It has never been this easy!
           </div>
           <p className="mt-2 text-slate-500">

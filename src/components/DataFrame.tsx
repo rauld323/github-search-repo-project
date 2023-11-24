@@ -21,10 +21,10 @@ const DataFrame: FC<IRepos> = ({
     setDaysDifference(difference);
   }, []);
   return (
-    <div className="w-[350px] max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md flex flex-col mb-10">
+    <div className="mx-auto mb-10 flex w-[350px] max-w-md flex-col overflow-hidden rounded-xl bg-white shadow-md">
       <div className="w-100 flex items-center p-4">
         <div
-          className="flex justify-center items-center p-2 text-center h-6 min rounded-lg"
+          className="min flex h-6 items-center justify-center rounded-lg p-2 text-center"
           style={{
             minWidth: "90px",
             backgroundColor: `${setBackgroundColor(language)}`,
@@ -36,24 +36,24 @@ const DataFrame: FC<IRepos> = ({
       </div>
 
       <div className="p-4">
-        <h2 className="text-lg sm:text-xl font-semibold text-gray-800">
+        <h2 className="text-lg font-semibold text-gray-800 sm:text-xl">
           {name}
         </h2>
       </div>
 
-      <div className="px-4 pb-4 overflow-hidden" style={{ maxWidth: "350px" }}>
-        <p className="text-sm sm:text-base text-gray-600">
+      <div className="overflow-hidden px-4 pb-4" style={{ maxWidth: "350px" }}>
+        <p className="text-sm text-gray-600 sm:text-base">
           {description ? description : "Sorry, No Description"}
         </p>
       </div>
 
       <div className="px-4 py-2">
-        <p className="text-xs sm:text-sm text-gray-500">{`Updated ${daysDifference} days ago.`}</p>
+        <p className="text-xs text-gray-500 sm:text-sm">{`Updated ${daysDifference} days ago.`}</p>
       </div>
 
-      <div className="px-4 py-2 mt-auto flex justify-center">
+      <div className="mt-auto flex justify-center px-4 py-2">
         <a
-          className="block w-40  bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl text-center"
+          className="block w-40  rounded-xl bg-blue-500 px-4 py-2 text-center font-bold text-white hover:bg-blue-600"
           href={svn_url}
           target="_blank"
         >

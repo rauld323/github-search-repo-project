@@ -18,17 +18,17 @@ const SearchBar: FC<ISearchBarProps> = ({
   };
 
   return (
-    <div className="border border-buttonBlue border-1 rounded-xl bg-white">
+    <div className="border-1 rounded-xl border border-buttonBlue bg-white">
       <FontAwesomeIcon icon={faMagnifyingGlass} className="ml-5 mr-2" />
       <input
-        className="w-60 h-10 outline-none rounded-xl"
+        className="h-10 w-60 rounded-xl outline-none"
         type="text"
         placeholder="Type GitHub user name"
         value={userName}
         onChange={handleInputChange}
       />
       <button
-        className="bg-buttonBlue w-16 h-10 overflow-hidden rounded-tr-lg rounded-br-lg text-white"
+        className="h-10 w-16 overflow-hidden rounded-br-lg rounded-tr-lg bg-buttonBlue text-white"
         onClick={fetchRepos}
       >
         Submit

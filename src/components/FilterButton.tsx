@@ -58,10 +58,10 @@ const FilterButton: FC<IProps> = ({
   }, [selectedOption, onFilterChange]);
 
   return (
-    <div className="relative inline-block text-left  max-w-40">
+    <div className="max-w-40 relative inline-block  text-left">
       <button
         type="button"
-        className="inline-flex justify-center rounded-lg border border-buttonBlue shadow-sm bg-white px-4 py-2 text-base font-medium text-buttonBlue hover:bg-gray-50 focus:outline-none"
+        className="inline-flex justify-center rounded-lg border border-buttonBlue bg-white px-4 py-2 text-base font-medium text-buttonBlue shadow-sm hover:bg-gray-50 focus:outline-none"
         onClick={handleButtonClick}
       >
         {selectedOption
@@ -72,7 +72,7 @@ const FilterButton: FC<IProps> = ({
       {showOptions && (
         <div
           ref={dropdownRef}
-          className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+          className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
         >
           <div
             className="py-1"
@@ -93,7 +93,7 @@ const FilterButton: FC<IProps> = ({
           </div>
           <button
             onClick={handleClearAll}
-            className="block w-full text-left px-4 py-2 text-sm text-buttonBlue hover:bg-gray-100 hover:text-gray-900"
+            className="block w-full px-4 py-2 text-left text-sm text-buttonBlue hover:bg-gray-100 hover:text-gray-900"
           >
             Clear All
           </button>
