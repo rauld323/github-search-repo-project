@@ -13,10 +13,6 @@ Additionally, apart from these primary focuses, I developed a comprehensive `Sto
 
 <br>
 
----
-
-<br>
-
 ## How to run:
 
 To run the project, type `npm run dev`
@@ -25,11 +21,7 @@ To run storybook, type `npm run storybook`
 
 <br>
 
----
-
 ## Future Improvements:
-
-<br>
 
 There's ample room for enhancing the shareable components within the project. Presently, these components were tailored specifically to meet the requirements of this particular project. However, there's a great opportunity to make them more versatile and dynamic. The aim would be to create components adaptable to various contexts, ensuring scalability and flexibility. This approach would streamline development efforts, avoiding the need to create different iterations of similar elements and instead offering adaptable components suitable for diverse scenarios.
 
