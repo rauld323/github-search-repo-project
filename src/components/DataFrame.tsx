@@ -21,7 +21,10 @@ const DataFrame: FC<IRepos> = ({
     setDaysDifference(difference);
   }, []);
   return (
-    <div className="mx-auto mb-10 flex w-[350px] max-w-md flex-col overflow-hidden rounded-xl bg-white shadow-md">
+    <div
+      className="mx-auto mb-10 flex w-[350px] max-w-md flex-col overflow-hidden rounded-xl bg-white shadow-md"
+      data-testid="dataFrame-container"
+    >
       <div className="w-100 flex items-center p-4">
         <div
           className="min flex h-6 items-center justify-center rounded-lg p-2 text-center"
