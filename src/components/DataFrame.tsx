@@ -1,5 +1,6 @@
 import { parseISO, differenceInDays } from "date-fns";
-import { FC, useEffect, useState } from "react";
+import gsap from "gsap";
+import { FC, useEffect, useRef, useState } from "react";
 import { IRepos } from "../App";
 import { setBackgroundColor, setTextColor } from "../helpers/setLanguageColor";
 import { validateLanguageString } from "../helpers/validateLanguageString";
@@ -12,6 +13,15 @@ const DataFrame: FC<IRepos> = ({
   updated_at,
 }) => {
   const [daysDifference, setDaysDifference] = useState<number | null>(null);
+  const parentRef = useRef<HTMLDivElement>(null);
+
+  const onEnter = () => {
+    gsap.to(parentRef.current, { scale: 1.05 });
+  };
+
+  const onLeave = () => {
+    gsap.to(parentRef.current, { scale: 1 });
+  };
 
   useEffect(() => {
     const currentDate = new Date();
@@ -24,6 +34,9 @@ const DataFrame: FC<IRepos> = ({
     <div
       className="mx-auto mb-10 flex w-[350px] max-w-md flex-col overflow-hidden rounded-xl bg-white shadow-md"
       data-testid="dataFrame-container"
+      ref={parentRef}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
     >
       <div className="w-100 flex items-center p-4">
         <div
@@ -46,7 +59,7 @@ const DataFrame: FC<IRepos> = ({
 
       <div className="overflow-hidden px-4 pb-4" style={{ maxWidth: "350px" }}>
         <p className="text-sm text-gray-600 sm:text-base">
-          {description ? description : "Sorry, No Description"}
+          {description ? description : "Sorry, User has no Description"}
         </p>
       </div>
 
