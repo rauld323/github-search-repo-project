@@ -11,7 +11,7 @@ const ErrorScreen = () => {
         />
       </div>
       <div className="text-center text-lg font-medium text-black">
-        Opps seems like we encoutered an error :0
+        Oops, seems like we encoutered an error :0
       </div>
       <div className="text-center text-lg font-medium text-black">
         Could it be the user does not exist?
