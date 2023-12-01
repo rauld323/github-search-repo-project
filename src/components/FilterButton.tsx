@@ -72,7 +72,7 @@ const FilterButton: FC<IProps> = ({
       {showOptions && (
         <div
           ref={dropdownRef}
-          className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
+          className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
         >
           <div
             className="py-1"
