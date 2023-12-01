@@ -28,8 +28,9 @@ const SearchBar: FC<ISearchBarProps> = ({
         onChange={handleInputChange}
       />
       <button
-        className="h-10 w-16 overflow-hidden rounded-br-lg rounded-tr-lg bg-buttonBlue text-white"
+        className="h-10 w-16 overflow-hidden rounded-br-lg rounded-tr-lg bg-buttonBlue text-white disabled:opacity-75"
         onClick={fetchRepos}
+        disabled={!userName}
       >
         Submit
       </button>
