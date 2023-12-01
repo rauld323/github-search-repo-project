@@ -1,5 +1,19 @@
 export function setBackgroundColor(languageName: string) {
   switch (languageName) {
+    case "Python":
+      return "#cadec3";
+    case "C":
+      return "#971e1a";
+    case "C++":
+      return "#3cccfb";
+    case "Java":
+      return "#808579";
+    case "PHP":
+      return "#27c6ba";
+    case "Scala":
+      return "#2d5f61";
+    case "Swift":
+      return "#e0e699";
     case "CSS":
       return "yellow";
     case "HTML":
@@ -25,6 +39,20 @@ export function setTextColor(languageName: string) {
   switch (languageName) {
     case "CSS":
       return "black";
+    case "Python":
+      return "white";
+    case "C":
+      return "white";
+    case "C++":
+      return "white";
+    case "Java":
+      return "white";
+    case "PHP":
+      return "white";
+    case "Scala":
+      return "white";
+    case "Swift":
+      return "white";
     case "HTML":
       return "white";
     case "JavaScript":
