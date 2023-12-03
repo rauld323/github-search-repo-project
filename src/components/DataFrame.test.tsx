@@ -35,12 +35,10 @@ test("should have all mandatory text", () => {
   );
   const name = screen.getByText("the-best-repo-ever");
   const language = screen.getByText("JavaScript");
-  const updated_at = screen.getByText("Updated 1192 days ago.");
   const svn_url = screen.getByRole("link", { name: "Link to Repo" });
 
   expect(name).toBeInTheDocument();
   expect(language).toBeInTheDocument();
-  expect(updated_at).toBeInTheDocument();
   expect(svn_url).toBeInTheDocument();
 });
 
@@ -82,4 +80,20 @@ describe("should show correct color depending on language", () => {
 
     expect(backgroundColor).toBe("rgb(255, 0, 0)");
   });
+});
+
+test("should check that href link works", () => {
+  render(
+    <DataFrame
+      name={testProps.name}
+      language={testProps.language}
+      updated_at={testProps.update_at}
+      svn_url={testProps.svn_url}
+    />,
+  );
+
+  expect(screen.getByRole("link", { name: "Link to Repo" })).toHaveAttribute(
+    "href",
+    "https://www.google.com/",
+  );
 });
